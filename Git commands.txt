@@ -1,22 +1,66 @@
 #This is in gitbash
 #cd to the Data Science portfolio
 
+
 #This makes a local folder called gitvideo
 mkdir gitvideo
+
 
 #cd into the gitvideo
 cd gitvideo
 
+
 #Now we make 2 files , main.py and index.html
 touch index.thml main.py
 
+
 #Now after adding the files to the folder- we need to insert our memory-card, initalise our project - while we're in our root folder
 git init
+
 
 #How do we save, we use this function "git add"- we can either add everything or a specific list
 git add . (this saves everything from the last time i saved)
 git add index.html (this would just save the index.html changes)
 #This is like putting these changes to the staging area
 
+
 #After the staging area we need to permanently save them as new immutable snapshot so we commit
 git commit -m 'adding index.html and main.py file'
+
+
+#Imagine now we are removing our index.html file and apping an app.js file
+rm index.html
+touch app.js
+git add .
+git commit -m 'Deleting index.html file and adding app.js'
+#Once again this removes index.html, adds app.js and includes all of the changes to the staging area. Then commits
+
+
+
+#We can log our previous commits using log (and their log number)
+git log
+
+
+#we can go back to our previous states so right now its like this:
+$ git log
+commit bfe3d84720c57f8d1e329fd53810866de7d4b9f0 (HEAD -> master)
+Author: Harman Singh <hss1823@gmail.com>
+Date:   Wed Feb 18 10:12:58 2026 +0800
+
+    Removing index.html and adding app.js
+
+commit 0ee9e84e0a03bec8534ab6116a638974797edd31
+Author: Harman Singh <hss1823@gmail.com>
+Date:   Wed Feb 18 10:10:15 2026 +0800
+
+    Adding index.html and main.py file
+
+
+#To go back to previous states we can just do this: - go to a previous saved point
+git checkout 0ee9e84e0a03bec8534ab6116a638974797edd31
+
+#now there is a branch- see the branches
+git branch
+
+#How do we hook up the local folder onto the github website
+git remote add origin https://github.com/hss360/gitvideo.git
