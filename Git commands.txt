@@ -1,0 +1,22 @@
+#This is in gitbash
+#cd to the Data Science portfolio
+
+#This makes a local folder called gitvideo
+mkdir gitvideo
+
+#cd into the gitvideo
+cd gitvideo
+
+#Now we make 2 files , main.py and index.html
+touch index.thml main.py
+
+#Now after adding the files to the folder- we need to insert our memory-card, initalise our project - while we're in our root folder
+git init
+
+#How do we save, we use this function "git add"- we can either add everything or a specific list
+git add . (this saves everything from the last time i saved)
+git add index.html (this would just save the index.html changes)
+#This is like putting these changes to the staging area
+
+#After the staging area we need to permanently save them as new immutable snapshot so we commit
+git commit -m 'adding index.html and main.py file'
